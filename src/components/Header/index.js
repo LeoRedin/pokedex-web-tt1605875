@@ -1,13 +1,10 @@
-/* MENU */
-/* 
-  4 LINKS
-  Home, Pokemons, Gerações, Sobre
-*/
+import { Menu } from '../Menu'
+
 function Header() {
   return (
     <div>
       <div>LOGO</div>
-      <div>MENU</div>
+      <Menu />
     </div>
   )
 }
