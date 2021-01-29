@@ -1,4 +1,4 @@
-import { Container, Link } from './styles'
+import { Container, Link, Content } from './styles'
 
 function Menu() {
   const menuItems = [
@@ -22,13 +22,13 @@ function Menu() {
 
   return (
     <Container>
-      <ul>
+      <Content>
         {menuItems.map(item => (
-          <li key={item.linkTo}>
-            <Link href={item.linkTo}>{item.name}</Link>
-          </li>
+          <Link key={item.linkTo} href={item.linkTo}>
+            {item.name}
+          </Link>
         ))}
-      </ul>
+      </Content>
     </Container>
   )
 }

@@ -8,13 +8,24 @@ export const Container = styled.nav`
 export const Link = styled.a`
   display: flex;
   text-decoration: none;
-  color: #f00;
+  color: #fff;
   margin: 0 15px;
   font-size: 1.1em;
   font-weight: bold;
 
-  &::active {
+  &:active {
     text-decoration: none;
-    color: #ff0;
+    color: #fff;
   }
+
+  &:hover {
+    color: #f76737;
+  }
+`
+
+export const Content = styled.div`
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end;
 `
