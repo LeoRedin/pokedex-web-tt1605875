@@ -1,6 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 import SFRegular from '../assets/fonts/sf-pro-display-regular.ttf'
+import bg from '../assets/images/pikachu-bg.png'
 
 export default createGlobalStyle`
   @font-face {
@@ -13,6 +14,29 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Sf';
+    overflow-x: hidden;
     background-color: #ff9227;
+    background-image: url(${bg});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    color: #fff;
+  }
+
+  input {
+    color: #000;
+
+    &:focus{
+      color: rgba(255,255,255, 1);
+    }
+
+    &::placeholder{
+      color: rgba(255,255,255, 0.3);
+      opacity: 1;
+    }
+
+    &::-ms-input-placeholder{
+      color: rgba(255,255,255, 0.3);
+    }
   }
 `
