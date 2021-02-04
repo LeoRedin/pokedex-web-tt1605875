@@ -4,4 +4,19 @@ const api = axios.create({
   baseURL: 'https://pokeapi.co/api/v2',
 })
 
-export { api }
+async function getPokemons() {
+  try {
+    const fetchData = await api.get('/pokemon')
+    return {
+      success: true,
+      data: fetchData.data,
+    }
+  } catch (error) {
+    return {
+      success: false,
+      error,
+    }
+  }
+}
+
+export { api, getPokemons }
