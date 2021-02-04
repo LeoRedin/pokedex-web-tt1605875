@@ -1,4 +1,4 @@
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 
 import { Home, Pokemons } from '../pages'
 
@@ -8,6 +8,7 @@ function Routes() {
       <Route exact path="/" component={Home} />
       <Route exact path="/pokemons" component={Pokemons} />
       <Route exact path="/pokemons/:pokemon" component={Pokemons} />
+      <Redirect from="*" to="/" />
     </Switch>
   )
 }
