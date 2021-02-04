@@ -1,13 +1,21 @@
+import { BrowserRouter as Router } from 'react-router-dom'
+import { createBrowserHistory } from 'history'
+
 import { Header } from './components'
-import { Home } from './pages'
 import GlobalStyles from './styles/global'
 
+import { Routes } from './routes'
+
 function App() {
+  const history = createBrowserHistory()
+
   return (
     <>
       <GlobalStyles />
-      <Header />
-      <Home />
+      <Router history={history}>
+        <Header />
+        <Routes />
+      </Router>
     </>
   )
 }

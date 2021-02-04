@@ -39,4 +39,11 @@ export default createGlobalStyle`
       color: rgba(255,255,255, 0.3);
     }
   }
+
+  a{
+    &.menu-active{
+      color: #db3400;
+      border-bottom: 2px solid #fff;
+    }
+  }
 `

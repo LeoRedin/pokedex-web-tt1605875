@@ -24,7 +24,12 @@ function Menu() {
     <Container>
       <Content>
         {menuItems.map(item => (
-          <Link key={item.linkTo} href={item.linkTo}>
+          <Link
+            exact
+            activeClassName="menu-active"
+            key={item.linkTo}
+            to={item.linkTo}
+          >
             {item.name}
           </Link>
         ))}

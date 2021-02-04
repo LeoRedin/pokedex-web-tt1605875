@@ -1,11 +1,12 @@
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 export const Container = styled.nav`
   display: flex;
   z-index: 1;
 `
 
-export const Link = styled.a`
+export const Link = styled(NavLink)`
   display: flex;
   text-decoration: none;
   color: #fff;
