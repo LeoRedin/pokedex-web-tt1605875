@@ -1,8 +1,8 @@
 import * as React from 'react'
 
 import { api, getPokemons } from '../../services'
-
-import { Spinner } from '../../components'
+import { Spinner, PokemonCard } from '../../components'
+import { Wrapper } from './styles'
 
 /* PRECISAMOS DE:
   ID => número da dex
@@ -56,7 +56,14 @@ function Pokemons() {
 
   if (loading) return <Spinner />
 
-  return <div>POKEMONS</div>
+  return (
+    <Wrapper>
+      <div>POKEMONS</div>
+      {pokemons.map(pokemon => (
+        <PokemonCard {...pokemon} />
+      ))}
+    </Wrapper>
+  )
 }
 
 export { Pokemons }
