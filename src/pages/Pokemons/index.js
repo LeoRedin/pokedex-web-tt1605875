@@ -2,6 +2,8 @@ import * as React from 'react'
 
 import { api, getPokemons } from '../../services'
 
+import { Spinner } from '../../components'
+
 /* PRECISAMOS DE:
   ID => número da dex
   NOME
@@ -11,6 +13,7 @@ import { api, getPokemons } from '../../services'
 
 function Pokemons() {
   const [pokemons, setPokemons] = React.useState()
+  const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function fetchPokemons() {
@@ -41,6 +44,7 @@ function Pokemons() {
           })
 
           setPokemons(updatedPokemons)
+          setLoading(false)
         })
       }
     }
@@ -49,6 +53,8 @@ function Pokemons() {
   }, [])
 
   console.log('pokemons', pokemons)
+
+  if (loading) return <Spinner />
 
   return <div>POKEMONS</div>
 }
