@@ -8,7 +8,7 @@ import { UnautheticatedApp } from './unauthenticated-app'
 
 function App() {
   const history = createBrowserHistory()
-  const user = false
+  const user = true
 
   return user ? (
     <Router history={history}>

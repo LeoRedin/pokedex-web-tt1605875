@@ -14,3 +14,40 @@ export const Container = styled(Link)`
   text-decoration: none;
   background: ${({ types }) => colors.backgrounds[types[0].type.name]};
 `
+
+export const Id = styled.div`
+  font-weight: bold;
+  color: rgba(23, 23, 27, 0.6);
+  line-height: 14px;
+  font-size: 1.5em;
+`
+
+export const Name = styled.div`
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 2em;
+  line-height: 31px;
+  color: #fff;
+  margin: 10px 0;
+`
+
+export const Badges = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+`
+
+export const Badge = styled.div`
+  width: 65px;
+  height: 25px;
+  border-radius: 3px;
+`
+export const BadgeImage = styled.img`
+  border-radius: 3px;
+`
+
+export const PokemonImage = styled.div`
+  position: absolute;
+  top: -30%;
+  right: 0;
+`
