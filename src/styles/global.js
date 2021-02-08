@@ -1,7 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
 import SFRegular from '../assets/fonts/sf-pro-display-regular.ttf'
-import bg from '../assets/images/pikachu-bg.png'
 
 export default createGlobalStyle`
   @font-face {
@@ -16,7 +15,6 @@ export default createGlobalStyle`
     font-family: 'Sf';
     overflow-x: hidden;
     background-color: #ff9227;
-    background-image: url(${bg});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: right;

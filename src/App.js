@@ -2,25 +2,25 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
 
 import { Header, Layout, RoutesLayout } from './components'
-import GlobalStyles from './styles/global'
 
 import { Routes } from './routes'
+import { UnautheticatedApp } from './unauthenticated-app'
 
 function App() {
   const history = createBrowserHistory()
+  const user = false
 
-  return (
-    <>
-      <GlobalStyles />
-      <Router history={history}>
-        <Layout>
-          <Header />
-          <RoutesLayout>
-            <Routes />
-          </RoutesLayout>
-        </Layout>
-      </Router>
-    </>
+  return user ? (
+    <Router history={history}>
+      <Layout>
+        <Header />
+        <RoutesLayout>
+          <Routes />
+        </RoutesLayout>
+      </Layout>
+    </Router>
+  ) : (
+    <UnautheticatedApp />
   )
 }
 

@@ -52,11 +52,22 @@ const weights = {
   heavy: '#57b2dc',
 }
 
+const gray = '#f1f2f7'
+const indigo = '#6F32FC'
+const indigoDarker = '#532CB0'
+const base = 'white'
+const text = '#434449'
+
 const colors = {
   types,
   backgrounds,
   heights,
   weights,
+  gray,
+  indigo,
+  indigoDarker,
+  base,
+  text,
 }
 
 export { colors }
