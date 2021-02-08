@@ -46,6 +46,7 @@ function Pokemons() {
           })
 
           setPokemons(updatedPokemons)
+          setBackupPokemons(updatedPokemons)
           setLoading(false)
         })
       }
@@ -54,17 +55,30 @@ function Pokemons() {
     fetchPokemons()
   }, [])
 
-  console.log('pokemons', pokemons)
+  React.useEffect(() => {
+    /* LÓGICA CROCANTE */
+    if (backupPokemons) {
+      const oldPokemons = [...backupPokemons]
+      const filteredPokemons = oldPokemons.filter(pokemon =>
+        pokemon.name.includes(pokeName.toLowerCase()),
+      )
+      setPokemons(filteredPokemons)
+    }
+  }, [pokeName, backupPokemons])
 
   if (loading) return <Spinner />
 
   return (
     <Wrapper>
       <InputContent>
-        <Input placeholder="Charmander" />
+        <Input
+          placeholder="Charmander"
+          value={pokeName}
+          onChange={evt => setPokeName(evt.target.value)}
+        />
       </InputContent>
       {pokemons.map(pokemon => (
-        <PokemonCard {...pokemon} />
+        <PokemonCard {...pokemon} key={pokemon.name} />
       ))}
     </Wrapper>
   )
