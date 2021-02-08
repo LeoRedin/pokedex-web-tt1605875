@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import { api, getPokemons } from '../../services'
 import { Spinner, PokemonCard } from '../../components'
-import { Wrapper } from './styles'
+import { Wrapper, Input, InputContent } from './styles'
 
 /* PRECISAMOS DE:
   ID => número da dex
@@ -14,6 +14,8 @@ import { Wrapper } from './styles'
 function Pokemons() {
   const [pokemons, setPokemons] = React.useState()
   const [loading, setLoading] = React.useState(true)
+  const [backupPokemons, setBackupPokemons] = React.useState()
+  const [pokeName, setPokeName] = React.useState('')
 
   React.useEffect(() => {
     async function fetchPokemons() {
@@ -58,7 +60,9 @@ function Pokemons() {
 
   return (
     <Wrapper>
-      <div>POKEMONS</div>
+      <InputContent>
+        <Input placeholder="Charmander" />
+      </InputContent>
       {pokemons.map(pokemon => (
         <PokemonCard {...pokemon} />
       ))}
