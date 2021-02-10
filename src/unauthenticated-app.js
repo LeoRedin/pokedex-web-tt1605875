@@ -1,7 +1,4 @@
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
-
-import { loginUser } from './redux/User/actions'
 import { Button } from './components/Button'
 
 const Wrapper = styled.div`
@@ -20,10 +17,8 @@ const ButtonsWrapper = styled.div`
 `
 
 function UnautheticatedApp() {
-  const dispatch = useDispatch()
-
   const handleLogin = () => {
-    dispatch(loginUser('leonardo'))
+    console.log('crocante')
   }
 
   return (

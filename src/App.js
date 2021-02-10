@@ -1,6 +1,5 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
-import { useSelector } from 'react-redux'
 
 import { Header, Layout, RoutesLayout } from './components'
 
@@ -9,10 +8,7 @@ import { UnautheticatedApp } from './unauthenticated-app'
 
 function App() {
   const history = createBrowserHistory()
-  const isAuthenticated = useSelector(state => state.user.isAuthenticated)
-  const reduxState = useSelector(state => state)
-
-  console.log(reduxState)
+  const isAuthenticated = false
 
   return isAuthenticated ? (
     <Router history={history}>
