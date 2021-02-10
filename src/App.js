@@ -1,5 +1,6 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 import { createBrowserHistory } from 'history'
+import { ReactQueryDevtools } from 'react-query/devtools'
 
 import { Header, Layout, RoutesLayout } from './components'
 
@@ -12,14 +13,17 @@ function App() {
   const { isAuthenticated } = useUserStore()
 
   return isAuthenticated ? (
-    <Router history={history}>
-      <Layout>
-        <Header />
-        <RoutesLayout>
-          <Routes />
-        </RoutesLayout>
-      </Layout>
-    </Router>
+    <>
+      <Router history={history}>
+        <Layout>
+          <Header />
+          <RoutesLayout>
+            <Routes />
+          </RoutesLayout>
+        </Layout>
+      </Router>
+      <ReactQueryDevtools initialIsOpen={false} />
+    </>
   ) : (
     <UnautheticatedApp />
   )
