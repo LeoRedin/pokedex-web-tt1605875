@@ -5,10 +5,11 @@ import { Header, Layout, RoutesLayout } from './components'
 
 import { Routes } from './routes'
 import { UnautheticatedApp } from './unauthenticated-app'
+import { useUserStore } from './store'
 
 function App() {
   const history = createBrowserHistory()
-  const isAuthenticated = false
+  const { isAuthenticated } = useUserStore()
 
   return isAuthenticated ? (
     <Router history={history}>

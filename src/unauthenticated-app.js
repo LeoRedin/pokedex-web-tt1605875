@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Button } from './components/Button'
+import { useUserStore } from './store'
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,15 +18,13 @@ const ButtonsWrapper = styled.div`
 `
 
 function UnautheticatedApp() {
-  const handleLogin = () => {
-    console.log('crocante')
-  }
+  const { login } = useUserStore()
 
   return (
     <Wrapper>
       <h1>Pokédex</h1>
       <ButtonsWrapper>
-        <span onClick={handleLogin}>
+        <span onClick={login}>
           <Button variant="primary">Login</Button>
         </span>
         <Button variant="secondary">Cadastro</Button>
