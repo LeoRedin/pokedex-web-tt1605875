@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   username: '',
-  isAuthenticated: false,
+  isAuthenticated: true,
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
