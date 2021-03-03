@@ -12,7 +12,7 @@ export const Container = styled(Link)`
   margin: 20px;
   border-radius: 10px;
   text-decoration: none;
-  background: ${({ types }) => colors.backgrounds[types[0].type.name]};
+  background: ${({ types }) => colors.backgrounds[types[0].name]};
 `
 
 export const Id = styled.div`

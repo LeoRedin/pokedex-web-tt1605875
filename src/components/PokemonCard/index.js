@@ -10,17 +10,18 @@ import {
 import { convertToPokemonId } from '../../utils'
 import { badges } from '../../assets/badges'
 
-function PokemonCard({ id, name, types, image }) {
+function PokemonCard({ pokedex, name, types, image }) {
+  console.log("🚀 ~ file: index.js ~ line 14 ~ PokemonCard ~ types", types)
   return (
     <Container types={types} to={`/pokemons/${name}`}>
-      <Id> {convertToPokemonId(id)} </Id>
+      <Id> {convertToPokemonId(pokedex)} </Id>
       <Name> {name} </Name>
       <Badges>
         {types.map(type => (
-          <Badge key={`${name}-${type.type.name}`}>
+          <Badge key={`${name}-${type.name}`}>
             <BadgeImage
-              src={badges[type.type.name]}
-              alt={`Badge ${type.type.name}`}
+              src={badges[type.name]}
+              alt={`Badge ${type.name}`}
             />
           </Badge>
         ))}
