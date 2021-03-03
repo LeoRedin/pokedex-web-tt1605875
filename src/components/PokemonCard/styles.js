@@ -35,10 +35,10 @@ export const Badges = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  gap: 15px;
 `
 
 export const Badge = styled.div`
-  width: 65px;
   height: 25px;
   border-radius: 3px;
 `
